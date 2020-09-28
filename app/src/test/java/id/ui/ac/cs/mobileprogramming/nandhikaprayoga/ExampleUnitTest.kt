@@ -1,4 +1,4 @@
-package id.ui.ac.cs.mobileprogramming.nandhikaprayoga.helloworld
+package id.ui.ac.cs.mobileprogramming.nandhikaprayoga
 
 import org.junit.Test
 
