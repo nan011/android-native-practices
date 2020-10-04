@@ -6,15 +6,33 @@
     <com.google.android.flexbox.FlexboxLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:flexDirection="row"
+        app:flexDirection="column"
         app:justifyContent="center"
         app:alignItems="center"
         >
-        <TextView
+        <com.google.android.flexbox.FlexboxLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/hello_world"
-            android:textSize="40sp"
+            app:justifyContent="center"
+            app:alignItems="center"
+            app:layout_flexGrow="1">
+            <TextView
+                android:id="@+id/counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textFontWeight="700"
+                android:textColor="#2a002a"
+                android:textSize="30sp"
+                android:text="20s"/>
+        </com.google.android.flexbox.FlexboxLayout>
+        <Button
+            android:id="@+id/exitButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Exit"
+            android:background="#2a002a"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="20sp"
             />
     </com.google.android.flexbox.FlexboxLayout>
 </LinearLayout>
