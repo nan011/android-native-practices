@@ -18,6 +18,6 @@ class MainActivity: AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        Toast.makeText(this@MainActivity, "Yoo I override this back pressed haha", Toast.LENGTH_LONG).show()
+        Toast.makeText(this@MainActivity, "Yoo I override this default back button", Toast.LENGTH_LONG).show()
     }
 }
