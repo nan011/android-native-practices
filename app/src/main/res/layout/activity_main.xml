@@ -6,15 +6,34 @@
     <com.google.android.flexbox.FlexboxLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:flexDirection="row"
-        app:justifyContent="center"
-        app:alignItems="center"
+        app:flexDirection="column"
+        android:paddingVertical="24sp"
         >
-        <TextView
-            android:layout_width="wrap_content"
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/hello_world"
-            android:textSize="40sp"
-            />
+            app:layout_flexGrow="1"
+            app:justifyContent="center"
+            app:alignItems="center">
+            <FrameLayout
+                android:id="@+id/mainFragment"
+                android:layout_width="match_parent"
+                android:layout_height="400sp"/>
+        </com.google.android.flexbox.FlexboxLayout>
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:flexDirection="row"
+            app:justifyContent="center"
+            app:alignItems="center"
+            >
+            <Button
+                android:id="@+id/exitButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#2a002a"
+                android:text="Exit"
+                />
+        </com.google.android.flexbox.FlexboxLayout>
     </com.google.android.flexbox.FlexboxLayout>
 </LinearLayout>
