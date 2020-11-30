@@ -10,11 +10,5 @@
         app:justifyContent="center"
         app:alignItems="center"
         >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hello_world"
-            android:textSize="40sp"
-            />
     </com.google.android.flexbox.FlexboxLayout>
 </LinearLayout>
