@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity() {
 
         if (!wifiManager.isWifiEnabled) {
             Toast.makeText(this, "WiFi is disabled ... We need to enable it", Toast.LENGTH_LONG)
-                .show();
+                .show()
         }
 
         adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, list)

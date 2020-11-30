@@ -5,14 +5,11 @@ import android.content.Context
 import android.content.Intent
 import android.net.wifi.ScanResult
 import android.net.wifi.WifiManager
-import android.os.Build
 import android.widget.ArrayAdapter
 import android.widget.Toast
-import androidx.annotation.RequiresApi
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import okhttp3.*
 import java.io.IOException
 
@@ -21,7 +18,6 @@ class AccessPointReceiver(
     private val list: ArrayList<String>,
     private val adapter: ArrayAdapter<String>
 ) : BroadcastReceiver() {
-    @RequiresApi(Build.VERSION_CODES.M)
     override fun onReceive(context: Context, intent: Intent) {
         val success = intent.getBooleanExtra(WifiManager.EXTRA_RESULTS_UPDATED, false)
         if (success) {
@@ -41,7 +37,8 @@ class AccessPointReceiver(
                     object : Callback {
                         override fun onFailure(call: Call, e: IOException) {
                             CoroutineScope(Dispatchers.Main).launch {
-                                Toast.makeText(context, "Fail send to server", Toast.LENGTH_LONG).show()
+                                Toast.makeText(context, "Fail send to server", Toast.LENGTH_LONG)
+                                    .show()
                             }
                         }
 
@@ -52,7 +49,11 @@ class AccessPointReceiver(
                                     println(body)
 
                                     CoroutineScope(Dispatchers.Main).launch {
-                                        Toast.makeText(context, "Success send to server", Toast.LENGTH_LONG).show()
+                                        Toast.makeText(
+                                            context,
+                                            "Success send to server",
+                                            Toast.LENGTH_LONG
+                                        ).show()
                                     }
                                 }
                             }
