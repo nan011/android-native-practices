@@ -12,12 +12,19 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class Lab2Activity: AppCompatActivity() {
     companion object {
-        fun reverseString(content: String): String {
-            if (content.length <= 1) {
-                return content
-            }
+        init {
+            System.loadLibrary("native-lib")
+        }
 
-            return content[content.lastIndex] + reverseString(content.substring(1, content.lastIndex)) + content[0]
+        external fun reverse(content: String): String
+
+        fun reverseString(content: String): String {
+            return Lab2Activity.reverse(content)
+//            if (content.length <= 1) {
+//                return content
+//            }
+//
+//            return content[content.lastIndex] + reverseString(content.substring(1, content.lastIndex)) + content[0]
         }
     }
 

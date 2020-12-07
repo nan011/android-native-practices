@@ -24,6 +24,12 @@ android {
         versionCode 1
         versionName "1.0"
 
+        externalNativeBuild {
+            cmake {
+                cppFlags ""
+            }
+        }
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -44,9 +50,17 @@ android {
         }
     }
 
+    externalNativeBuild {
+        cmake {
+            path "src/main/cpp/CMakeLists.txt"
+            version "3.10.2"
+        }
+    }
+
     testOptions {
         unitTests.returnDefaultValues = true
     }
+    ndkVersion '21.0.6113669'
 }
 
 dependencies {
