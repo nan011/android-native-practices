@@ -6,7 +6,7 @@ android {
     compileSdkVersion 29
 
     defaultConfig {
-        applicationId "id.ui.ac.cs.mobileprogramming.nandhikaprayoga"
+        applicationId 'id.ac.ui.cs.mobileprogramming.nandhikaprayoga'
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 1
